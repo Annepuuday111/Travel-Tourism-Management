@@ -1,0 +1,77 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Tourism Management</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/contactstyle.css'  %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">TTM</div>
+    <ul class="nav-links">
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <div class="menu">
+            <a href="{% url 'home' %}">HOME</a>&nbsp;&nbsp;
+            <a href="{% url 'about' %}">ABOUT</a>&nbsp;&nbsp;
+            <a href="{% url 'contact' %}">CONTACT</a>&nbsp;&nbsp;
+            <a href="{% url 'gallery' %}">GALLERY</a>&nbsp;&nbsp;
+            <a href="{% url 'login' %}">LOGOUT</a>&nbsp;&nbsp;
+        </div>
+    </ul>
+</nav>
+<h1 align="center"><font color="black"> Contact Us </font></h1>
+<section class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!
+    1m12!1m3!1d3826.6563666777565!2d80.61807542509717!3d16.442269634292597!2m3
+    !1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f097e23832b3%3A0x4616fd944c078
+    389!2sKL%20University%20Main%20Entrance%2C%20Vaddeswaram%2C%20Andhra%20Pradesh%20522303!5e0!3m2!1sen!2
+    sin!4v1690088451359!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+<section class="contact-us">
+    <div class="row">
+        <div class="contact-col">
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>Address</h5>
+                    <p>Green Fields, Vaddeswaram, Andhra Pradesh 522302</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>President</h5>
+                    <p>Koneru Satyanarayana</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+91 08645350200</h5>
+                    <p>Monday to Saturday 9AM TO 5PM</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>kluniversity@gmail.com</h5>
+                    <p>Email us your query</p>
+                </span>
+            </div>
+        </div>
+        <div class="contact-col">
+            <form action="">
+                <input type="text" placeholder="Enter your name" required>
+                <input type="email" placeholder="Enter email address" required>
+                <input type="text" placeholder="Enter your subject" required>
+                <textarea rows="8" placeholder="Message" required></textarea>
+                <button type="submit" class="hero-btn  red-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

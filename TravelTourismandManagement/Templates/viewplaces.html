@@ -1,0 +1,60 @@
+{% extends 'adminhome.html' %}
+{% block 'b1' %}
+<style>
+h2 {
+    color: green;
+}
+
+form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f2f2f2;
+    text-align:center;
+    }
+</style>
+<h1 align="center"><font color="green"> Packages Available</font> </h1>
+<form method="post" action="{% url 'checkpackages' %}" style="width:75%">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tour Code</th>
+                <th>Tour Name</th>
+                <th>Tour Package</th>
+                <th>Description</th>
+            </tr>
+            {% for i in placesdata %}
+                <tr>
+                    <td>{{ i.tourcode }}</td>
+                    <td>{{ i.tourname }}</td>
+                    <td>{{ i.tourpackage }}</td>
+                    <td>{{ i.desc }}</td>
+                </tr>
+            {% endfor %}
+        </thead>
+    </table>
+</form>
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Tourism Management</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/homestyle.css'  %}" />
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">TTM</div>
+    <ul class="nav-links">
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <div class="menu">
+            <a href="{% url 'home' %}">HOME</a>&nbsp;&nbsp;
+            <a href="#">VIEW PACKAGES</a>&nbsp;&nbsp;
+            <a href="{% url 'login' %}">LOGOUT</a>&nbsp;&nbsp;
+        </div>
+    </ul>
+</nav>
+{% block 'b1' %}
+<div>
+    {% for i in messages %}
+    <h4 align="right"><font color="red" size="4">{{i}} &nbsp;</font></h4>
+    {% endfor %}
+</div>
+<h1 align="center"><font color="black"> Welcome to Travel Tourism Management</font></h1>
+{% endblock %}
+</body>
+</html>

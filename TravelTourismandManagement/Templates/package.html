@@ -1,0 +1,103 @@
+{% extends 'adminhome.html' %}
+{% block 'b1' %}
+    <style>
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            background-color: green;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="reset"]:hover, input[type="reset"]{
+            background-color: red;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .messages-container {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .error-message {
+        color: red;
+        font-size: 16px;
+    }
+    </style>
+
+    <h1>Insert Packages</h1>
+    <form method="post" action="{% url 'checkpackages' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <table>
+            <tr>
+                <td>Enter Tour Code</td>
+                <td><input type="text" name="tourcode" required/></td>
+            </tr>
+            <tr>
+                <td>Enter Tour Name</td>
+                <td><input type="text" name="tourname" required/></td>
+            </tr>
+            <tr>
+                <td>Enter Tour Package</td>
+                <td><input type="text" name="tourpackage" required/></td>
+            </tr>
+            <tr>
+                <td>Enter Desc</td>
+                <td><input type="text" name="desc" required/></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Insert">
+                </td>
+                <td>
+                    <input type="reset" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+<div>
+    {% for i in messages %}
+    <h4 align="center"><font color="red" size="4">{{i}}</font></h4>
+    {% endfor %}
+</div>
+{% endblock %}
